@@ -1,6 +1,7 @@
+
 CREATE TABLE tenants (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR
+    nombre VARCHAR NOT NULL
 );
 
 CREATE TABLE usuarios (
@@ -30,7 +31,7 @@ CREATE TABLE pedidos (
     total DECIMAL(10,2) NOT NULL
 );
 
-CREATE TABLE detallesPedidos (
+CREATE TABLE detalles_pedidos (
     id SERIAL PRIMARY KEY,
     id_pedido INTEGER NOT NULL REFERENCES pedidos(id),
     id_producto INTEGER NOT NULL REFERENCES productos(id),
